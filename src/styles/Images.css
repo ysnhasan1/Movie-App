@@ -1,0 +1,50 @@
+.images-container {
+    margin: 2rem 0;
+}
+
+.images-container>h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.images-container .img {
+    height: 30rem;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .images-container .img {
+        height: 24rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .images-container .img {
+        height: 18rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .images-container .img {
+        height: 14rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .images-container .img {
+        height: 12rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .images-container .img {
+        height: 10rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .images-container .img {
+        height: 50rem;
+    }
+}

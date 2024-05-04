@@ -1,0 +1,30 @@
+.video-container>.flex-container {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.video-container>.flex-container>.flex-item {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container>.flex-container>.flex-item.left {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.video-container>.flex-container>.flex-item.right>svg {
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.video-container>.flex-container>.flex-item.right>svg:hover {
+    cursor: pointer;
+    background-color: white;
+}

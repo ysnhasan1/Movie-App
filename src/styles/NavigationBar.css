@@ -1,0 +1,8 @@
+.dropdown-item:hover {
+    background-color: #343a40 !important;
+}
+
+.input:focus {
+    border-color: #f4e864;
+    box-shadow: none;
+}

@@ -1,0 +1,237 @@
+.movie-container {
+    position: relative;
+    margin-top: 60px;
+    box-shadow: inset 0 0 0 1000px rgb(10, 10, 10);
+}
+
+.react-bs-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 7rem 0;
+    gap: 2.5rem;
+}
+
+.react-bs-container>.flex-item {
+    position: relative;
+    color: white;
+}
+
+.react-bs-container>.flex-item>.img {
+    border-radius: 8px;
+    width: 18rem;
+    height: 26rem;
+}
+
+.react-bs-container>.flex-item.second {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+}
+
+.react-bs-container>.flex-item.second>.title-and-release-date-container {
+    margin-bottom: 0.2rem;
+}
+
+.react-bs-container>.flex-item.second .title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.react-bs-container>.flex-item.second .title:hover {
+    cursor: default;
+}
+
+.react-bs-container>.flex-item.second .release-date {
+    font-size: 2.2rem;
+    color: #ffffff99;
+}
+
+.react-bs-container>.flex-item.second .genres-and-runtime {
+    font-size: 1rem;
+}
+
+.react-bs-container>.flex-item.second .genres-and-runtime>.runtime {
+    margin-left: 5px;
+}
+
+.react-bs-container>.flex-item .imdb-rating {
+    font-size: 1.3rem;
+}
+
+.react-bs-container>.flex-item.second>.rating-and-video-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 15px;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+}
+
+.react-bs-container>.flex-item.second>.rating-and-video-container a {
+    color: white;
+    text-decoration: none;
+}
+
+.react-bs-container>.flex-item.second .watch-video>a:hover {
+    cursor: pointer;
+    color: #f83e48;
+}
+
+.react-bs-container>.flex-item.second .watch-video>svg {
+    width: 1em;
+    height: 1em;
+    margin: 0 4px 3px 0;
+    cursor: default;
+    background: none;
+}
+
+.react-bs-container>.flex-item.second .tagline {
+    font-style: italic;
+    color: #ffffff99;
+    font-size: 1rem;
+}
+
+.react-bs-container>.flex-item.second .summary,
+.top {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.react-bs-container>.flex-item.second .bottom {
+    font-size: 1rem;
+    background-color: rgb(40, 40, 40);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+.react-bs-container>.flex-item.second .summary {
+    margin-bottom: -10px;
+}
+
+.react-bs-container>.flex-item.second .overview {
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 992px) {
+
+    .react-bs-container>.flex-item>.img {
+        width: 16rem;
+        height: 23rem;
+    }
+
+    .react-bs-container>.flex-item.second .title {
+        font-size: 1.8rem;
+    }
+
+    .react-bs-container>.flex-item.second .release-date {
+        font-size: 1.8rem;
+    }
+
+    .react-bs-container>.flex-item.second .genres-and-runtime {
+        font-size: 0.9rem;
+    }
+
+    .react-bs-container>.flex-item .imdb-rating {
+        font-size: 1.1rem;
+    }
+
+    .react-bs-container>.flex-item.second>.rating-and-video-container {
+        font-size: 1rem;
+    }
+
+    .react-bs-container>.flex-item.second .tagline {
+        font-size: 0.9rem;
+    }
+
+    .react-bs-container>.flex-item.second .summary,
+    .top {
+        font-size: 1rem;
+    }
+
+    .react-bs-container>.flex-item.second .bottom {
+        font-size: 0.9rem;
+    }
+
+    .react-bs-container>.flex-item.second .overview {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .react-bs-container>.flex-item.second .title {
+        font-size: 1.6rem;
+    }
+
+    .react-bs-container>.flex-item.second .release-date {
+        font-size: 1.6rem;
+    }
+
+    .react-bs-container>.flex-item.second .genres-and-runtime {
+        font-size: 0.8rem;
+    }
+
+    .react-bs-container>.flex-item .imdb-rating {
+        font-size: 1rem;
+    }
+
+    .react-bs-container>.flex-item.second>.rating-and-video-container {
+        font-size: 0.9rem;
+    }
+
+    .react-bs-container>.flex-item.second .tagline {
+        font-size: 0.8rem;
+    }
+
+    .react-bs-container>.flex-item.second .summary,
+    .top {
+        font-size: 0.9rem;
+    }
+
+    .react-bs-container>.flex-item.second .bottom {
+        font-size: 0.8rem;
+    }
+
+    .react-bs-container>.flex-item.second .overview {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 650px) {
+
+    .movie-container::before {
+        background-position: center;
+    }
+
+    .react-bs-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .react-bs-container>.flex-item.second {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    .react-bs-container>.flex-item.second>.rating-and-video-container {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .react-bs-container>.flex-item>.img {
+        width: 14rem;
+        height: 20rem;
+    }
+}

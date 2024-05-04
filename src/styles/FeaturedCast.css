@@ -1,0 +1,80 @@
+.featured-cast-container {
+    margin: 2rem 0;
+}
+
+.featured-cast-container>h3 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cast {
+    padding: 0 8px;
+}
+
+.cast .img {
+    object-fit: contain;
+    height: 15rem;
+    margin-bottom: 15px;
+}
+
+.cast .name,
+.character {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 90%;
+}
+
+.cast .name {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.cast .character {
+    color: #ffffff99;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 1200px) {
+    .cast .img {
+        height: 12rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .cast .name {
+        font-size: 0.8rem;
+    }
+
+    .cast .character {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .cast .img {
+        height: 9rem;
+    }
+
+    .cast .name {
+        font-size: 0.75rem;
+    }
+
+    .cast .character {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .cast .img {
+        height: 7rem;
+    }
+}
+
+@media (min-width: 1800px) {
+    .cast .img {
+        height: 25rem;
+    }
+}
