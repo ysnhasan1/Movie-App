@@ -53,7 +53,7 @@ h3 {
 
 @media (max-width: 480px) {
     .movies-container>.row>.movie {
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
 
     .movies-container>.row>.movie>.title {
