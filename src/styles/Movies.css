@@ -17,19 +17,31 @@ h3 {
     cursor: pointer;
     height: 80%;
     min-height: calc(30vw / 1.77777);
-    border-radius: 4px;
 }
 
 .movies-container>.row>.movie>.imdb-rating {
-    margin-top: 8px;
-    margin-left: 1px;
+    margin-top: 5px;
     cursor: default;
-    width: 85%;
+    display: flex;
+    gap: 6px;
+}
+
+.movies-container>.row>.movie>.imdb-rating>.bs-star-icon {
+    color: #f4e864;
+    height: 2em;
+    width: 1.2em;
+}
+
+.movies-container>.row>.movie>.imdb-rating>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    font-weight: bold;
 }
 
 .movies-container>.row>.movie>.title {
-    margin: 8px 0 0 5px;
-    width: 85%;
+    margin-top: 2px;
     height: 2rem;
     white-space: nowrap;
     overflow: hidden;
