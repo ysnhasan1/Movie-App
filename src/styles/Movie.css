@@ -40,6 +40,7 @@
 .react-bs-container>.flex-item.second .title {
     font-size: 2.2rem;
     font-weight: bold;
+    letter-spacing: 1px;
     margin-right: 10px;
 }
 
@@ -60,8 +61,22 @@
     margin-left: 5px;
 }
 
-.react-bs-container>.flex-item .imdb-rating {
-    font-size: 1.3rem;
+.react-bs-container>.flex-item.second>.rating-and-video-container>.imdb-rating {
+    gap: 5px;
+}
+
+.react-bs-container>.flex-item.second>.rating-and-video-container>.imdb-rating>.bs-star-icon {
+    color: #f4e864;
+    height: 2em;
+    width: 1.2em;
+}
+
+.react-bs-container>.flex-item.second>.rating-and-video-container>.imdb-rating>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    font-weight: bold;
 }
 
 .react-bs-container>.flex-item.second>.rating-and-video-container {
@@ -72,6 +87,13 @@
     margin-top: 0.5rem;
     margin-bottom: 3rem;
     font-size: 1.1rem;
+}
+
+.react-bs-container>.flex-item.second>.rating-and-video-container>span {
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .react-bs-container>.flex-item.second>.rating-and-video-container a {
@@ -87,7 +109,7 @@
 .react-bs-container>.flex-item.second .watch-video>svg {
     width: 1em;
     height: 1em;
-    margin: 0 4px 3px 0;
+    margin-right: 5px;
     cursor: default;
     background: none;
 }
