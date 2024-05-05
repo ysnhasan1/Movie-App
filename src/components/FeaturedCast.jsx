@@ -61,14 +61,6 @@ function FeaturedCast(props) {
                     slidesToShow: 3,
                     slidesToScroll: 3
                 }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows: false,
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
             }
         ]
     };
@@ -79,7 +71,7 @@ function FeaturedCast(props) {
                 <Container fluid style={{ width: "94%" }}>
                     {(!loading_credits && !loading_movie) &&
                         <>
-                            {<div className="featured-cast-container">
+                            {<div className="featured-cast-container mx-2">
                                 {language === "en-US" ?
                                     <h3>Featured Cast <span style={{ color: "#ffffff99" }}>({cast.length})</span></h3>
                                     :
