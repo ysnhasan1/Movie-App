@@ -92,8 +92,18 @@ function Movies() {
                                                 style={{ color: "white" }}
                                             />
                                         </div>
-                                        {movie.vote_average === 0 ? <div className="imdb-rating" style={{ color: "#ffffff99" }}>⭐ NR</div> :
-                                            <div className="imdb-rating">⭐ {(movie.vote_average.toFixed(1))}</div>}
+                                        {movie.vote_average === 0
+                                            ?
+                                            <div className="imdb-rating" style={{ color: "#ffffff99" }}>
+                                                <i class="bi bi-star-fill bs-star-icon"></i>
+                                                <span>NR</span>
+                                            </div>
+                                            :
+                                            <div className="imdb-rating">
+                                                <i class="bi bi-star-fill bs-star-icon"></i>
+                                                <span>{(movie.vote_average.toFixed(1))}</span>
+                                            </div>
+                                        }
 
                                         <div onClick={() => navigate(`movie/${movie.id}`)} className="title">{movie.title}</div>
 
