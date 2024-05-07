@@ -1,7 +1,7 @@
 export function fetchWhichMovies() {
-    let which_movies = localStorage.getItem("which_movies")
-    if (which_movies) {
-        return which_movies
+    let which_movies_local = localStorage.getItem("which_movies_local")
+    if (which_movies_local) {
+        return which_movies_local
     }
     else {
         return "top_rated"
@@ -9,13 +9,13 @@ export function fetchWhichMovies() {
 }
 
 export function storeWhichMovies(data) {
-    localStorage.setItem("which_movies", data)
+    localStorage.setItem("which_movies_local", data)
 }
 
 export function fetchSortedBy() {
-    let sorted_by = localStorage.getItem("sorted_by")
-    if (sorted_by) {
-        return sorted_by
+    let sorted_by_local = localStorage.getItem("sorted_by_local")
+    if (sorted_by_local) {
+        return sorted_by_local
     }
     else {
         return "descending"
@@ -23,13 +23,13 @@ export function fetchSortedBy() {
 }
 
 export function storeSortedBy(data) {
-    localStorage.setItem("sorted_by", data)
+    localStorage.setItem("sorted_by_local", data)
 }
 
 export function fetchLanguage() {
-    let language = localStorage.getItem("language")
-    if (language) {
-        return language
+    let language_local = localStorage.getItem("language_local")
+    if (language_local) {
+        return language_local
     }
     else {
         return "en-US"
@@ -37,13 +37,13 @@ export function fetchLanguage() {
 }
 
 export function storeLanguage(data) {
-    localStorage.setItem("language", data)
+    localStorage.setItem("language_local", data)
 }
 
 export function fetchInput() {
-    let input = localStorage.getItem("input")
-    if (input) {
-        return input
+    let input_local = localStorage.getItem("input_local")
+    if (input_local) {
+        return input_local
     }
     else {
         return ""
@@ -51,5 +51,12 @@ export function fetchInput() {
 }
 
 export function storeInput(data) {
-    localStorage.setItem("input", data)
+    localStorage.setItem("input_local", data)
 }
+
+// Removing previous variables saved in users' local storage for this website.
+// Because I changed the variables names.
+localStorage.removeItem("which_movies")
+localStorage.removeItem("sorted_by")
+localStorage.removeItem("language")
+localStorage.removeItem("input")
