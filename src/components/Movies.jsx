@@ -58,6 +58,11 @@ function Movies() {
             }
         })
 
+    function navigateDetails(id) {
+        navigate(`movie/${id}`)
+        window.scrollTo(0, 0)
+    }
+
     return (
         <>
             <Container fluid style={{ width: "94%" }}>
@@ -82,7 +87,7 @@ function Movies() {
                                     <div key={index} className="movie col-4 col-md-3 col-xl-2">
                                         <div className="img">
                                             <LazyLoadImage
-                                                onClick={() => navigate(`movie/${movie.id}`)}
+                                                onClick={() => navigateDetails(movie.id)}
                                                 src={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
                                                 alt={movie.title + " poster image"}
                                                 placeholderSrc={posterPlaceholder}
@@ -105,7 +110,7 @@ function Movies() {
                                             </div>
                                         }
 
-                                        <div onClick={() => navigate(`movie/${movie.id}`)} className="title">{movie.title}</div>
+                                        <div onClick={() => navigateDetails(movie.id)} className="title">{movie.title}</div>
 
                                     </div>
                                 ))}
