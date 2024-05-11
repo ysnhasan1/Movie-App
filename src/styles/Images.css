@@ -42,9 +42,3 @@
         height: 10rem;
     }
 }
-
-@media (min-width: 1800px) {
-    .images-container .img {
-        height: 50rem;
-    }
-}
