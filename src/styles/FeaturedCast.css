@@ -72,9 +72,3 @@
         height: 7rem;
     }
 }
-
-@media (min-width: 1800px) {
-    .cast .img {
-        height: 25rem;
-    }
-}
