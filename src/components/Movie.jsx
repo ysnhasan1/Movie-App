@@ -25,13 +25,10 @@ function Movie(props) {
     const dispatch = useDispatch()
     const language = useSelector((state) => state.navigationBarReducer.language)
 
-    const [videoFetched, setVideoFetched] = useState(false)
-
     useEffect(() => {
         dispatch(getMovie({ id: props.id, language: language }))
-        if (props.showVideo && !videoFetched) {
+        if (props.showVideo) {
             dispatch(getVideo({ id: props.id, language: language }))
-            setVideoFetched(true)
         }
 
     }, [dispatch, props.id, language, props.showVideo])

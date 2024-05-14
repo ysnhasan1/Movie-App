@@ -11,7 +11,7 @@ import Container from "react-bootstrap/Container"
 // Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
-import personPlaceholder from "../assets/images/person.jpg"
+import personPlaceholder from "../assets/images/person.png"
 
 // CSS
 import "../styles/FeaturedCast.css"
@@ -35,12 +35,19 @@ function FeaturedCast(props) {
         infinite: false,
         centerMode: false,
         speed: 1000,
-        slidesToShow: 7,
-        slidesToScroll: 3,
+        slidesToShow: 9,
+        slidesToScroll: 4,
         initialSlide: 0,
         autoplay: false,
         arrows: true,
         responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 7,
+                    slidesToScroll: 3
+                }
+            },
             {
                 breakpoint: 1024,
                 settings: {
@@ -67,7 +74,7 @@ function FeaturedCast(props) {
 
     return (
         <>
-            {cast?.length >= 7 &&
+            {cast?.length >= 9 &&
                 <Container fluid style={{ width: "94%" }}>
                     {(!loading_credits && !loading_movie) &&
                         <>

@@ -1,5 +1,5 @@
 .images-container {
-    margin: 2rem 0;
+    margin-top: 2rem;
 }
 
 .images-container>h3 {
@@ -9,36 +9,17 @@
 }
 
 .images-container .img {
-    height: 30rem;
-    object-fit: contain;
+    height: calc(60vw / 1.77777);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1400px) {
     .images-container .img {
-        height: 24rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .images-container .img {
-        height: 18rem;
+        height: calc(90vw / 1.77777);
     }
 }
 
 @media (max-width: 600px) {
     .images-container .img {
-        height: 14rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .images-container .img {
-        height: 12rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .images-container .img {
-        height: 10rem;
+        height: calc(85vw / 1.77777);
     }
 }

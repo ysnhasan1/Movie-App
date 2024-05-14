@@ -9,7 +9,7 @@ import Carousel from "react-bootstrap/Carousel"
 // Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
-import carouselPlaceholder from "../assets/images/carousel.jpg"
+import posterPlaceholder from "../assets/images/poster.webp"
 
 // CSS
 import "../styles/Images.css"
@@ -41,12 +41,12 @@ function Images(props) {
                             }
                             <Carousel>
                                 {file_paths.map((path, index) => (
-                                    <Carousel.Item key={index} interval={2500}>
+                                    <Carousel.Item key={index} interval={4000}>
                                         <div className="img">
                                             <LazyLoadImage
                                                 src={`https://image.tmdb.org/t/p/original/${path}`}
                                                 alt={`Slide ${index + 1}`}
-                                                placeholderSrc={carouselPlaceholder}
+                                                placeholderSrc={posterPlaceholder}
                                                 effect="blur"
                                                 width="100%"
                                                 height="100%"
