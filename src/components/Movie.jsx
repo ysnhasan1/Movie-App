@@ -84,7 +84,7 @@ function Movie(props) {
                                         effect="blur"
                                         width="100%"
                                         height="100%"
-                                        style={{ color: "white" }}
+                                        style={{ color: "white", borderRadius: "0.75rem" }}
                                     />
                                 </div>
                             </div>
