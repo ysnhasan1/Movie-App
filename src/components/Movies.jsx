@@ -106,7 +106,7 @@ function Movies() {
                                             :
                                             <div className="imdb-rating">
                                                 <i class="bi bi-star-fill bs-star-icon"></i>
-                                                <span>{(movie.vote_average.toFixed(1))}</span>
+                                                <span>{(movie.vote_average?.toFixed(1))}</span>
                                             </div>
                                         }
 
