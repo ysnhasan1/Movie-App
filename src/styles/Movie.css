@@ -1,7 +1,7 @@
 .movie-container {
     position: relative;
     margin-top: 60px;
-    box-shadow: inset 0 0 0 1000px rgb(10, 10, 10);
+    box-shadow: inset 0 0 0 1000px black;
 }
 
 .react-bs-container {
@@ -20,7 +20,6 @@
 }
 
 .react-bs-container>.flex-item>.img {
-    border-radius: 8px;
     width: 18rem;
     height: 26rem;
 }
@@ -103,7 +102,7 @@
 
 .react-bs-container>.flex-item.second .watch-video>a:hover {
     cursor: pointer;
-    color: #f83e48;
+    color: #DC3545;
 }
 
 .react-bs-container>.flex-item.second .watch-video>svg {
@@ -128,9 +127,6 @@
 
 .react-bs-container>.flex-item.second .bottom {
     font-size: 1rem;
-    background-color: rgb(40, 40, 40);
-    padding: 2px 4px;
-    border-radius: 4px;
 }
 
 .react-bs-container>.flex-item.second .summary {
@@ -190,6 +186,22 @@
 
 @media (max-width: 768px) {
 
+    .movie-container::before {
+        background-position: center;
+    }
+
+    .react-bs-container {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .react-bs-container>.flex-item.second {
+        width: 94%;
+        margin: 0 auto;
+    }
+
     .react-bs-container>.flex-item.second .title {
         font-size: 1.6rem;
     }
@@ -208,6 +220,7 @@
 
     .react-bs-container>.flex-item.second>.rating-and-video-container {
         font-size: 0.9rem;
+        margin-bottom: 1rem;
     }
 
     .react-bs-container>.flex-item.second .tagline {
@@ -225,29 +238,6 @@
 
     .react-bs-container>.flex-item.second .overview {
         font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 650px) {
-
-    .movie-container::before {
-        background-position: center;
-    }
-
-    .react-bs-container {
-        flex-direction: column;
-        align-items: center;
-        padding-top: 0.5rem;
-        padding-bottom: 1rem;
-    }
-
-    .react-bs-container>.flex-item.second {
-        width: 94%;
-        margin: 0 auto;
-    }
-
-    .react-bs-container>.flex-item.second>.rating-and-video-container {
-        margin-bottom: 1rem;
     }
 }
 

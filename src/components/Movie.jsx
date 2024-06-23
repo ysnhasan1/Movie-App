@@ -1,23 +1,16 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getMovie } from "../redux/features/movie/movieSlice"
 import { getVideo } from "./../redux/features/video/videoSlice"
 
-// Components
 import Loading from "./Loading"
 
-// React Bootstrap
-import Container from "react-bootstrap/Container"
-
-// style-it
 import Style from "style-it"
 
-// Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import posterPlaceholder from "../assets/images/poster.webp"
 
-// CSS
 import "../styles/Movie.css"
 
 function Movie(props) {
@@ -45,7 +38,7 @@ function Movie(props) {
         const hours = Math.floor(runtime / 60)
         const minutes = runtime % 60
         return language === "en-US" ? `${hours}h ${minutes}m` : `${hours}s ${minutes}d`
-    };
+    }
 
     function aClick() {
         props.setShowVideo(true)
@@ -68,13 +61,12 @@ function Movie(props) {
                             right: 0;
                             bottom: 0;
                             left: 0;
-                            opacity: 0.13;
-                        }
+                            opacity: 0.15;
                     `}
                     </Style>
 
                     <div className="movie-container">
-                        <Container fluid style={{ width: "92%" }} className="react-bs-container">
+                        <div className="react-bs-container container px-md-3">
                             <div className="flex-item">
                                 <div className="img">
                                     <LazyLoadImage
@@ -111,12 +103,12 @@ function Movie(props) {
                                 <div className="rating-and-video-container">
                                     {movie.vote_average === 0 ?
                                         <span className="imdb-rating" style={{ color: "#ffffff99" }}>
-                                            <i class="bi bi-star-fill bs-star-icon"></i>
+                                            <i className="bi bi-star-fill bs-star-icon"></i>
                                             <span>NR</span>
                                         </span>
                                         :
                                         <span className="imdb-rating">
-                                            <i class="bi bi-star-fill bs-star-icon"></i>
+                                            <i className="bi bi-star-fill bs-star-icon"></i>
                                             <span>{(movie.vote_average?.toFixed(1))}</span>
                                         </span>
                                     }
@@ -175,7 +167,7 @@ function Movie(props) {
                                     }
                                 </div>
                             </div>
-                        </Container>
+                        </div>
                     </div>
                 </>
             }

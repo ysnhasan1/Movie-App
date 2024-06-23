@@ -1,7 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
-import { api_key, base_url } from '../../../api/api'
+const api_key = import.meta.env.VITE_API_KEY
+const base_url = import.meta.env.VITE_BASE_URL
 
 // recommendations
 export const getRecommendations = createAsyncThunk("getRecommendations", async (id) => {

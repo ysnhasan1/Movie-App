@@ -6,6 +6,7 @@ import videoSlice from '../features/video/videoSlice'
 import credits from '../features/credits/credits'
 import imagesSlice from '../features/images/imagesSlice'
 import recommendationsSlice from '../features/recommendations/recommendationsSlice'
+import searchAndQuerySlice from '../features/searchAndQuery/searchAndQuerySlice'
 
 export const store = configureStore({
     reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
         videoReducer: videoSlice,
         creditsReducer: credits,
         imagesReducer: imagesSlice,
-        recommendationsReducer: recommendationsSlice
+        recommendationsReducer: recommendationsSlice,
+        searchAndQueryReducer: searchAndQuerySlice
     }
 })

@@ -2,16 +2,12 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getImages } from "../redux/features/images/imagesSlice"
 
-// React Bootstrap
-import Container from 'react-bootstrap/Container'
 import Carousel from "react-bootstrap/Carousel"
 
-// Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import posterPlaceholder from "../assets/images/poster.webp"
 
-// CSS
 import "../styles/Images.css"
 
 function Images(props) {
@@ -30,36 +26,34 @@ function Images(props) {
 
     return (
         <>
-            <Container fluid style={{ width: "94%" }}>
-                {(!loading_images && !loading_credits && !loading_movie) &&
-                    <>
-                        {file_paths.length > 0 && <div className="images-container">
-                            {language === "en-US" ?
-                                <h3>Backgrounds <span style={{ color: "#ffffff99" }}>({file_paths.length})</span></h3>
-                                :
-                                <h3>Arka Planlar <span style={{ color: "#ffffff99" }}>({file_paths.length})</span></h3>
-                            }
-                            <Carousel>
-                                {file_paths.map((path, index) => (
-                                    <Carousel.Item key={index} interval={4000}>
-                                        <div className="img">
-                                            <LazyLoadImage
-                                                src={`https://image.tmdb.org/t/p/original/${path}`}
-                                                alt={`Slide ${index + 1}`}
-                                                placeholderSrc={posterPlaceholder}
-                                                effect="blur"
-                                                width="100%"
-                                                height="100%"
-                                                style={{ color: "white" }}
-                                            />
-                                        </div>
-                                    </Carousel.Item>
-                                ))}
-                            </Carousel>
-                        </div>}
-                    </>
-                }
-            </Container>
+            {(!loading_images && !loading_credits && !loading_movie) &&
+                <>
+                    {file_paths.length > 0 && <div className="images-container">
+                        {language === "en-US" ?
+                            <h3>Backgrounds <span style={{ color: "#ffffff99" }}>({file_paths.length})</span></h3>
+                            :
+                            <h3>Arka Planlar <span style={{ color: "#ffffff99" }}>({file_paths.length})</span></h3>
+                        }
+                        <Carousel indicators={false}>
+                            {file_paths.map((path, index) => (
+                                <Carousel.Item key={index} interval={4000}>
+                                    <div className="img">
+                                        <LazyLoadImage
+                                            src={`https://image.tmdb.org/t/p/original/${path}`}
+                                            alt={`Slide ${index + 1}`}
+                                            placeholderSrc={posterPlaceholder}
+                                            effect="blur"
+                                            width="100%"
+                                            height="auto"
+                                            style={{ color: "white", aspectRatio: 3 / 2 }}
+                                        />
+                                    </div>
+                                </Carousel.Item>
+                            ))}
+                        </Carousel>
+                    </div>}
+                </>
+            }
         </>
     )
 }

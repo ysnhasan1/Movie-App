@@ -13,15 +13,14 @@ h3 {
     margin-bottom: 25px;
 }
 
-.movies-container>.row>.movie>.img {
-    cursor: pointer;
-    height: 80%;
-    min-height: calc(30vw / 1.77777);
+.movies-container>.row>.movie:hover {
+    transform: scale(0.95);
+    filter: blur(1px);
+    transition: 0.3s ease-in-out;
 }
 
 .movies-container>.row>.movie>.imdb-rating {
-    margin-top: 5px;
-    cursor: default;
+    margin: 5px 0 0 8px;
     display: flex;
     gap: 6px;
 }
@@ -41,16 +40,11 @@ h3 {
 }
 
 .movies-container>.row>.movie>.title {
-    margin-top: 2px;
+    margin-left: 8px;
     height: 2rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.movies-container>.row>.movie>.title:hover {
-    cursor: pointer;
-    color: #f4e864;
 }
 
 @media (max-width: 600px) {

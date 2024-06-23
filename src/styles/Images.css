@@ -7,19 +7,3 @@
     font-size: 1.5rem;
     color: white;
 }
-
-.images-container .img {
-    height: calc(60vw / 1.77777);
-}
-
-@media (max-width: 1400px) {
-    .images-container .img {
-        height: calc(90vw / 1.77777);
-    }
-}
-
-@media (max-width: 600px) {
-    .images-container .img {
-        height: calc(85vw / 1.77777);
-    }
-}

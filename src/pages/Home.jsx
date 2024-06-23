@@ -1,17 +1,17 @@
 import { useSelector } from "react-redux"
 
-// Components
 import Movies from "../components/Movies"
+import SearchAndQuery from "../components/searchAndQuery"
 import Footer from "../components/Footer"
 
 function Home() {
 
-    const loading_movies = useSelector((state) => state.moviesReducer.loading)
+    const input = useSelector((state) => state.navigationBarReducer.input)
 
     return (
         <>
-            <Movies />
-            {!loading_movies && <Footer />}
+            {input == "" ? <Movies /> : <SearchAndQuery />}
+            <Footer />
         </>
     )
 }

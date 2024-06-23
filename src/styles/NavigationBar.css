@@ -1,8 +1,12 @@
+.bg-dark {
+    background-color: rgb(0, 5, 8) !important;
+}
+
 .dropdown-item:hover {
-    background-color: #343a40 !important;
+    background-color: rgb(0, 5, 8) !important;
 }
 
 .input:focus {
-    border-color: #f4e864;
+    border-color: #DC3545;
     box-shadow: none;
 }

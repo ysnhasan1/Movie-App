@@ -9,11 +9,10 @@
 }
 
 .cast {
-    padding: 0 10px;
+    padding: 0 8px;
 }
 
 .cast .img {
-    height: calc(22vw / 1.77777);
     margin-bottom: 10px;
 }
 
@@ -34,24 +33,6 @@
 .cast .character {
     color: #ffffff99;
     font-size: 0.8rem;
-}
-
-@media (max-width: 1200px) {
-    .cast .img {
-        height: calc(28vw / 1.77777);
-    }
-}
-
-@media (max-width: 1024px) {
-    .cast .img {
-        height: calc(42vw / 1.77777);
-    }
-}
-
-@media (max-width: 768px) {
-    .cast .img {
-        height: calc(56vw / 1.77777);
-    }
 }
 
 @media (max-width: 600px) {

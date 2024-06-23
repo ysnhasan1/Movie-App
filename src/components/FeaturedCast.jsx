@@ -2,18 +2,12 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getCredits } from "../redux/features/credits/credits"
 
-// React Slick
 import Slider from "react-slick"
 
-// React Bootstrap
-import Container from "react-bootstrap/Container"
-
-// Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import personPlaceholder from "../assets/images/person.png"
 
-// CSS
 import "../styles/FeaturedCast.css"
 
 function FeaturedCast(props) {
@@ -29,7 +23,6 @@ function FeaturedCast(props) {
     const loading_credits = useSelector((state) => state.creditsReducer.loading)
     const loading_movie = useSelector((state) => state.movieReducer.loading)
 
-    // React Slick
     let settings = {
         dots: false,
         infinite: false,
@@ -59,26 +52,28 @@ function FeaturedCast(props) {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 4,
-                    slidesToScroll: 4
+                    slidesToScroll: 4,
+                    arrows: false
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToScroll: 3,
+                    arrows: false
                 }
             }
         ]
-    };
+    }
 
     return (
         <>
             {cast?.length >= 9 &&
-                <Container fluid style={{ width: "94%" }}>
+                <>
                     {(!loading_credits && !loading_movie) &&
-                        <>
-                            {<div className="featured-cast-container mx-2">
+                        <div className="container">
+                            {<div className="featured-cast-container">
                                 {language === "en-US" ?
                                     <h3>Featured Cast <span style={{ color: "#ffffff99" }}>({cast.length})</span></h3>
                                     :
@@ -94,8 +89,8 @@ function FeaturedCast(props) {
                                                     placeholderSrc={personPlaceholder}
                                                     effect="blur"
                                                     width="100%"
-                                                    height="100%"
-                                                    style={{ color: "white" }}
+                                                    height="auto"
+                                                    style={{ color: "white", aspectRatio: 3 / 5 }}
                                                 />
                                             </div>
 
@@ -105,9 +100,9 @@ function FeaturedCast(props) {
                                     ))}
                                 </Slider>
                             </div>}
-                        </>
+                        </div>
                     }
-                </Container>
+                </>
             }
         </>
     )

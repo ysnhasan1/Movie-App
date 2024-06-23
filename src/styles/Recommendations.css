@@ -10,23 +10,10 @@
 
 .recommendations-container .img {
     border-radius: 4px;
-    height: calc(13vw / 1.77777);
 }
 
 .recommendations-container .img:hover {
     cursor: pointer;
     filter: blur(2px);
     transform: scale(1.01);
-}
-
-@media (max-width: 1400px) {
-    .recommendations-container .img {
-        height: calc(44vw / 1.77777);
-    }
-}
-
-@media (max-width: 600px) {
-    .recommendations-container .img {
-        height: calc(38vw / 1.77777);
-    }
 }

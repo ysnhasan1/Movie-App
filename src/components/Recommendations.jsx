@@ -1,22 +1,16 @@
 import { useEffect } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { getRecommendations } from "./../redux/features/recommendations/recommendationsSlice"
 
-// React Bootstrap
-import Container from "react-bootstrap/Container"
-
-// Lazy Loading
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import posterPlaceholder from "../assets/images/poster.webp"
 
-// CSS
 import "../styles/Recommendations.css"
 
 function Recommendations(props) {
 
-    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const language = useSelector((state) => state.navigationBarReducer.language)
@@ -32,44 +26,42 @@ function Recommendations(props) {
     const loading_credits = useSelector((state) => state.creditsReducer.loading)
     const loading_movie = useSelector((state) => state.movieReducer.loading)
 
-    function navigateDetails(id) {
-        navigate(`/movie/${id}`)
+    function handleClick() {
         window.scrollTo(0, 0)
         props.setShowVideo(false)
     }
 
     return (
         <>
-            <Container fluid style={{ width: "94%" }}>
-                {(!loading_recommendations && !loading_images && !loading_credits && !loading_movie) &&
-                    <>
-                        {recommendations.length > 0 &&
-                            <div className="recommendations-container">
-                                {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
+            {(!loading_recommendations && !loading_images && !loading_credits && !loading_movie) &&
+                <>
+                    {recommendations.length > 0 &&
+                        <div className="recommendations-container">
+                            {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
 
-                                <div className="row">
-                                    {recommendations.map((recommendation, index) => (
-                                        <div key={index} className="col-6 mb-3">
+                            <div className="row">
+                                {recommendations.map((recommendation, index) => (
+                                    <div key={index} className="col-6 mb-3">
+                                        <Link to={`/movie/${recommendation.id}`} onClick={handleClick}>
                                             <LazyLoadImage
                                                 className="img"
-                                                onClick={() => navigateDetails(recommendation.id)}
-                                                src={`https://image.tmdb.org/t/p/original/${recommendation.backdrop_path}`}
+                                                src={`https://image.tmdb.org/t/p/w250_and_h141_face/${recommendation.backdrop_path}`}
                                                 alt={recommendation.title + " background image"}
                                                 placeholderSrc={posterPlaceholder}
                                                 effect="blur"
                                                 width="100%"
-                                                height="100%"
-                                                style={{ color: "white" }}
+                                                height="auto"
+                                                style={{ color: "white", aspectRatio: 3 / 2 }}
                                             />
-                                        </div>
-                                    ))}
-                                </div>
-
+                                        </Link>
+                                    </div>
+                                ))}
                             </div>
-                        }
-                    </>
-                }
-            </Container>
+
+                        </div>
+                    }
+                </>
+            }
         </>
     )
 }
