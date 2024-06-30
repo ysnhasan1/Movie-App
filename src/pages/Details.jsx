@@ -31,16 +31,16 @@ function Details() {
                 <div className="row">
                     {
                         recommendations.length > 0 ?
-                            <div className="col-12 col-xxl-8 mb-xxl-4">
+                            <div className="col-12 col-lg-8 mb-lg-4">
                                 <Images id={params.id} />
                             </div>
                             :
-                            <div className="col-12 col-xxl-8 mb-4">
+                            <div className="col-12 col-lg-8 mb-4">
                                 <Images id={params.id} />
                             </div>
                     }
 
-                    <div className="col-12 col-xxl-4">
+                    <div className="col-12 col-lg-4">
                         <Recommendations id={params.id} setShowVideo={setShowVideo} />
                     </div>
                 </div>
