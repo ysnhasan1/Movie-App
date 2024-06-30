@@ -7,6 +7,8 @@ import Loading from "./Loading"
 import ExtraInformations from "./ExtraInformations"
 import ZeroMovie from "./ZeroMovie"
 
+import Style from "style-it"
+
 import { LazyLoadImage } from "react-lazy-load-image-component"
 import "react-lazy-load-image-component/src/effects/blur.css"
 import posterPlaceholder from "../assets/images/poster.webp"
@@ -49,61 +51,87 @@ function Movies() {
             }
         })
 
+    const random_background_path = movies[(Math.floor(Math.random() * movies.length))]?.backdrop_path
+
     return (
-        <div className="container">
-            {(input.length > 0 && movies.length == 0) && <ZeroMovie />}
-            {loading_movies ? <Loading /> :
-                <>
-                    {which_movies === "top_rated" && movies.length != 0 ?
-                        (language === "en-US" ? <h3>Top Rated Movies</h3> : <h3>En Fazla Oy Alan Filmler</h3>) :
-                        which_movies === "popular" && movies.length != 0 ?
-                            (language === "en-US" ? <h3>Popular Movies</h3> : <h3>Popüler Filmler</h3>) :
-                            which_movies === "upcoming" && movies.length != 0 ?
-                                (language === "en-US" ? <h3>Upcoming Movies</h3> : <h3>Gelecek Filmler</h3>) :
-                                which_movies === "now_playing" && movies.length != 0 &&
-                                (language === "en-US" ? <h3>Now Playing Movies</h3> : <h3>Gösterimdeki Filmler</h3>)
-                    }
+        <>
+            <Style>
+                {`
+                    .random-bg::before {
+                        content: "";
+                        background-image: url("https://image.tmdb.org/t/p/w250_and_h141_face${random_background_path}");
+                        background-size: cover;
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        background-position: center;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        opacity: 0.2;
+                        filter: blur(15px);
+                `}
+            </Style>
 
-                    {(input == "" && movies.length > 0) && <ExtraInformations />}
+            <div className="random-bg position-relative">
+                <div className="container position-relative">
+                    {(input.length > 0 && movies.length == 0) && <ZeroMovie />}
+                    {loading_movies ? <Loading /> :
+                        <>
+                            {which_movies === "top_rated" && movies.length != 0 ?
+                                (language === "en-US" ? <h3>Top Rated Movies</h3> : <h3>En Fazla Oy Alan Filmler</h3>) :
+                                which_movies === "popular" && movies.length != 0 ?
+                                    (language === "en-US" ? <h3>Popular Movies</h3> : <h3>Popüler Filmler</h3>) :
+                                    which_movies === "upcoming" && movies.length != 0 ?
+                                        (language === "en-US" ? <h3>Upcoming Movies</h3> : <h3>Gelecek Filmler</h3>) :
+                                        which_movies === "now_playing" && movies.length != 0 &&
+                                        (language === "en-US" ? <h3>Now Playing Movies</h3> : <h3>Gösterimdeki Filmler</h3>)
+                            }
 
-                    <div className="movies-container">
-                        <div className="row">
-                            {movies.map((movie, index) => (
-                                <div key={index} className="movie col-4 col-md-3 col-xl-2">
-                                    <Link to={`movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)}>
-                                        <div className="img">
-                                            <LazyLoadImage
-                                                src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
-                                                alt={movie.title + " poster image"}
-                                                placeholderSrc={posterPlaceholder}
-                                                effect="blur"
-                                                width="100%"
-                                                height="auto"
-                                                style={{ color: "white", borderRadius: "0.75rem", aspectRatio: 3 / 5 }}
-                                            />
-                                        </div>
-                                    </Link>
+                            {(input == "" && movies.length > 0) && <ExtraInformations />}
 
-                                    {movie.vote_average === 0
-                                        ?
-                                        <div className="imdb-rating" style={{ color: "#ffffff99" }}>
-                                            <i className="bi bi-star-fill bs-star-icon"></i>
-                                            <span>NR</span>
+                            <div className="movies-container">
+                                <div className="row">
+                                    {movies.map((movie, index) => (
+                                        <div key={index} className="movie col-4 col-md-3 col-xl-2">
+                                            <Link to={`movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)}>
+                                                <div className="img">
+                                                    <LazyLoadImage
+                                                        src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
+                                                        alt={movie.title + " poster image"}
+                                                        placeholderSrc={posterPlaceholder}
+                                                        effect="blur"
+                                                        width="100%"
+                                                        height="auto"
+                                                        style={{ color: "white", borderRadius: "0.75rem", aspectRatio: 3 / 5 }}
+                                                    />
+                                                </div>
+                                            </Link>
+
+                                            {movie.vote_average === 0
+                                                ?
+                                                <div className="imdb-rating" style={{ color: "#ffffff99" }}>
+                                                    <i className="bi bi-star-fill bs-star-icon"></i>
+                                                    <span>NR</span>
+                                                </div>
+                                                :
+                                                <div className="imdb-rating">
+                                                    <i className="bi bi-star-fill bs-star-icon"></i>
+                                                    <span>{(movie.vote_average?.toFixed(1))}</span>
+                                                </div>
+                                            }
+                                            <div className="title">{movie.title}</div>
                                         </div>
-                                        :
-                                        <div className="imdb-rating">
-                                            <i className="bi bi-star-fill bs-star-icon"></i>
-                                            <span>{(movie.vote_average?.toFixed(1))}</span>
-                                        </div>
-                                    }
-                                    <div className="title">{movie.title}</div>
+                                    ))}
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-                </>
-            }
-        </div>
+                            </div>
+                        </>
+                    }
+                </div>
+            </div>
+        </>
+
     )
 }
 
