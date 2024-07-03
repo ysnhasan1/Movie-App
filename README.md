@@ -76,7 +76,7 @@ The site's responsive design ensures easy accessibility on every device and scre
 ## Project Dependencies
 To install packages, run the command `npm install`. <br> 
 Then, to start the project, run `npm run dev`. <br> 
-Important Note: You'll need a unique **API key** to access movies.
+Important Note: You'll need a unique **API key** to access movies. <br><br>
 
 ## API
 This site was built using [TMDb API](https://www.themoviedb.org/).
