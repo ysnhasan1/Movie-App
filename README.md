@@ -40,6 +40,8 @@ https://movnite.netlify.app/
 #### `Read the exciting stories before watching the movies!`
 <img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/ba327b7b-2b4b-4f71-8014-06c6bd145e8f"> <br><br>
 <img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/ff108c87-07db-4208-ac60-8091d84790d8"> <br><br>
+<img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/4d3b6075-f618-41f5-9628-351d5beafaf9"> <br><br>
+<img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/fb3c8823-b4db-4f4d-bc33-42560f9e9319"> <br><br>
 
 #### `Take a look at the featured cast, images and recommendations of the movies!`
 <img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/243ee46c-05b5-4fac-a29b-3b78365032e6"> <br><br>
