@@ -6,7 +6,7 @@ import Movie from "../components/Movie"
 import Video from "../components/Video"
 import FeaturedCast from "../components/FeaturedCast"
 import Images from "../components/Images"
-// import Footer from "../components/Footer"
+import Footer from "../components/Footer"
 import Recommendations from "../components/Recommendations"
 
 function Details() {
@@ -20,7 +20,7 @@ function Details() {
     }
 
     const recommendations = useSelector((state) => state.recommendationsReducer.recommendations)
-    // const loading_movie = useSelector((state) => state.movieReducer.loading)
+    const loading_movie = useSelector((state) => state.movieReducer.loading)
 
     return (
         <>
@@ -45,7 +45,7 @@ function Details() {
                     </div>
                 </div>
             </div>
-            {/* {!loading_movie && <Footer />} */}
+            {!loading_movie && <Footer />}
         </>
     )
 }
