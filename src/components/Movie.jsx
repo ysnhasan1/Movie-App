@@ -61,7 +61,7 @@ function Movie(props) {
                             right: 0;
                             bottom: 0;
                             left: 0;
-                            opacity: 0.15;
+                            opacity: 0.1;
                     `}
                     </Style>
 
