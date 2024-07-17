@@ -89,6 +89,7 @@ Copy the following code for your .env file. <br>
 VITE_API_KEY = "your api key should be here"
 VITE_BASE_URL = "https://api.themoviedb.org/3"
 ```
+<br>
 
 ## API
 This site was built using [TMDb API](https://www.themoviedb.org/).
