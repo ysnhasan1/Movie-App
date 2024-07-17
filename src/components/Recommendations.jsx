@@ -61,7 +61,7 @@ function Recommendations(props) {
                         :
                         <div className="recommendations-container">
                             {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
-                            <div className="d-flex justify-content-center text-secondary">
+                            <div className="text-secondary">
                                 {language === "en-US" ?
                                     <p>There are no recommendations for this movie.</p>
                                     :

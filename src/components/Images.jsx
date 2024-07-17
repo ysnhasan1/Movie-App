@@ -55,7 +55,7 @@ function Images(props) {
                         :
                         <div className="images-container">
                             {language === "en-US" ? <h3>Backgrounds</h3> : <h3>Arka Planlar</h3>}
-                            <div className="d-flex justify-content-center text-secondary">
+                            <div className="text-secondary">
                                 {language === "en-US" ?
                                     <p>There are no background images for this movie.</p>
                                     :
