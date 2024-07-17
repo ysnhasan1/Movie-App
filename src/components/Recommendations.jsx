@@ -35,7 +35,7 @@ function Recommendations(props) {
         <>
             {(!loading_recommendations && !loading_images && !loading_credits && !loading_movie) &&
                 <>
-                    {recommendations.length > 0 &&
+                    {recommendations.length > 0 ?
                         <div className="recommendations-container">
                             {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
 
@@ -57,7 +57,17 @@ function Recommendations(props) {
                                     </div>
                                 ))}
                             </div>
-
+                        </div>
+                        :
+                        <div className="recommendations-container">
+                            {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
+                            <div className="d-flex justify-content-center text-secondary">
+                                {language === "en-US" ?
+                                    <p>There are no recommendations for this movie.</p>
+                                    :
+                                    <p>Bu film için tavsiye yok.</p>
+                                }
+                            </div>
                         </div>
                     }
                 </>
