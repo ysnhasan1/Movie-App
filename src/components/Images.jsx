@@ -28,7 +28,7 @@ function Images(props) {
         <>
             {(!loading_images && !loading_credits && !loading_movie) &&
                 <>
-                    {file_paths.length > 0 && <div className="images-container">
+                    {file_paths.length > 0 ? <div className="images-container">
                         {language === "en-US" ?
                             <h3>Backgrounds <span style={{ color: "#ffffff99" }}>({file_paths.length})</span></h3>
                             :
@@ -51,7 +51,19 @@ function Images(props) {
                                 </Carousel.Item>
                             ))}
                         </Carousel>
-                    </div>}
+                    </div>
+                        :
+                        <div className="images-container">
+                            {language === "en-US" ? <h3>Backgrounds</h3> : <h3>Arka Planlar</h3>}
+                            <div className="d-flex justify-content-center text-secondary">
+                                {language === "en-US" ?
+                                    <p>There are no background images for this movie.</p>
+                                    :
+                                    <p>Bu film için arka plan resmi yok.</p>
+                                }
+                            </div>
+                        </div>
+                    }
                 </>
             }
         </>
