@@ -47,7 +47,7 @@ function Movie(props) {
 
     return (
         <>
-            {loading_movie ? <Loading /> :
+            {(loading_movie || crew == undefined) ? <Loading /> :
                 <>
                     <Style>
                         {`
