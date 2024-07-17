@@ -80,5 +80,15 @@ To install packages, run the command `npm install`. <br>
 Then, to start the project, run `npm run dev`. <br> 
 Important Note: You'll need a unique **API key** to access movies. <br><br>
 
+## Adding the .env file to the project
+Place the .env file outside of the src folder as shown in the screenshot below. <br><br>
+<img src="https://github.com/user-attachments/assets/20f71d11-09bd-47db-858e-e2628e50cb1a"> <br>
+
+Copy the following code for your .env file. <br>
+```javascript
+VITE_API_KEY = "your api key should be here"
+VITE_BASE_URL = "https://api.themoviedb.org/3"
+```
+
 ## API
 This site was built using [TMDb API](https://www.themoviedb.org/).
