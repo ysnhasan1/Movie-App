@@ -126,7 +126,7 @@ function Movie(props) {
                                 }
 
                                 <div className="summary">
-                                    <p>{language === "en-US" ? "Summary" : "Özet"}</p>
+                                    <p>{language === "en-US" ? "Overview" : "Özet"}</p>
                                 </div>
 
                                 <div className="overview">
