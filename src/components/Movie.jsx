@@ -125,17 +125,23 @@ function Movie(props) {
                                     </div>
                                 }
 
-                                {movie.overview !== "" &&
-                                    <>
-                                        <div className="summary">
-                                            <p>{language === "en-US" ? "Summary" : "Özet"}</p>
-                                        </div>
+                                <div className="summary">
+                                    <p>{language === "en-US" ? "Summary" : "Özet"}</p>
+                                </div>
 
-                                        <div className="overview">
-                                            <p>{movie.overview}</p>
-                                        </div>
-                                    </>
-                                }
+                                <div className="overview">
+                                    {movie.overview !== "" ?
+                                        <p>{movie.overview}</p>
+                                        :
+                                        <p>
+                                            {language === "en-US" ?
+                                                "We don't have an overview translated in English."
+                                                :
+                                                "Türkçe'ye çevrilmiş bir özet henüz bulunmuyor."
+                                            }
+                                        </p>
+                                    }
+                                </div>
 
                                 <div className="d-flex gap-2 gap-md-4 flex-wrap">
                                     {director &&
