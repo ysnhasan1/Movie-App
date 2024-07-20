@@ -69,8 +69,8 @@ function Movies() {
                         right: 0;
                         bottom: 0;
                         left: 0;
-                        opacity: 0.2;
-                        filter: blur(15px);
+                        opacity: 0.35;
+                        filter: blur(3px);
                 `}
             </Style>
 
