@@ -42,7 +42,7 @@ function Recommendations(props) {
                             <div className="row">
                                 {recommendations.map((recommendation, index) => (
                                     <div key={index} className="col-6 mb-3">
-                                        <Link to={`/movie/${recommendation.id}`} onClick={handleClick}>
+                                        <Link to={`/movie/${recommendation.id}-${recommendation.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={handleClick}>
                                             <LazyLoadImage
                                                 className="img"
                                                 src={`https://image.tmdb.org/t/p/w250_and_h141_face/${recommendation.backdrop_path}`}

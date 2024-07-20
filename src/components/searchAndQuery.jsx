@@ -28,7 +28,7 @@ function SearchAndQuery() {
                         <div className="row">
                             {searched_movies.map((movie, index) => (
                                 <div key={index} className="movie col-4 col-md-3 col-xl-2">
-                                    <Link to={`movie/${movie.id}`} onClick={() => window.scrollTo(0, 0)}>
+                                    <Link to={`movie/${movie.id}-${movie.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={() => window.scrollTo(0, 0)}>
                                         <div className="img">
                                             <LazyLoadImage
                                                 src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
