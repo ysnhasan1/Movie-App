@@ -80,13 +80,13 @@ function Movies() {
                     {loading_movies ? <Loading /> :
                         <>
                             {which_movies === "top_rated" && movies.length != 0 ?
-                                (language === "en-US" ? <h3>Top Rated Movies</h3> : <h3>En Fazla Oy Alan Filmler</h3>) :
+                                (language === "en-US" ? <h3 className="which-movies">Top Rated Movies</h3> : <h3 className="which-movies">En Fazla Oy Alan Filmler</h3>) :
                                 which_movies === "popular" && movies.length != 0 ?
-                                    (language === "en-US" ? <h3>Popular Movies</h3> : <h3>Popüler Filmler</h3>) :
+                                    (language === "en-US" ? <h3 className="which-movies">Popular Movies</h3> : <h3 className="which-movies">Popüler Filmler</h3>) :
                                     which_movies === "upcoming" && movies.length != 0 ?
-                                        (language === "en-US" ? <h3>Upcoming Movies</h3> : <h3>Gelecek Filmler</h3>) :
+                                        (language === "en-US" ? <h3 className="which-movies">Upcoming Movies</h3> : <h3 className="which-movies">Gelecek Filmler</h3>) :
                                         which_movies === "now_playing" && movies.length != 0 &&
-                                        (language === "en-US" ? <h3>Now Playing Movies</h3> : <h3>Gösterimdeki Filmler</h3>)
+                                        (language === "en-US" ? <h3 className="which-movies">Now Playing Movies</h3> : <h3 className="which-movies">Gösterimdeki Filmler</h3>)
                             }
 
                             {(input == "" && movies.length > 0) && <ExtraInformations />}
