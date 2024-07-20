@@ -61,7 +61,8 @@ function Movie(props) {
                             right: 0;
                             bottom: 0;
                             left: 0;
-                            opacity: 0.1;
+                            opacity: 0.35;
+                            filter: blur(3px);
                     `}
                     </Style>
 
