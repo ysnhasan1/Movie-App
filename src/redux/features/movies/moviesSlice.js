@@ -20,10 +20,9 @@ export const getMovies = createAsyncThunk("getMovies", async ({ endpoint, langua
         movies = [...movies, ...response.data.results]
     }
 
-    // const key = 'title'
-    // const unique_movies = [...new Map(movies.map(item => [item[key], item])).values()]
-    // return unique_movies
-    return movies
+    const key = 'title'
+    const unique_movies = [...new Map(movies.map(item => [item[key], item])).values()]
+    return unique_movies
 })
 
 const initialState = {
