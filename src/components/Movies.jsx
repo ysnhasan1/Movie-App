@@ -48,6 +48,8 @@ function Movies() {
                 return b.vote_average - a.vote_average
             } else if (sorted_by === "ascending") {
                 return a.vote_average - b.vote_average
+            } else if (sorted_by === "default") {
+                return
             }
         })
 

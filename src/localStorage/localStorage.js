@@ -18,7 +18,7 @@ export function fetchSortedBy() {
         return sorted_by_local
     }
     else {
-        return "descending"
+        return "default"
     }
 }
 

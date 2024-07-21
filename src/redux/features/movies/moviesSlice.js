@@ -11,22 +11,19 @@ export const getMovies = createAsyncThunk("getMovies", async ({ endpoint, langua
 
     if (endpoint === "upcoming" || endpoint === "now_playing") {
         total_pages = 5
-        for (let current_page = 1; current_page <= total_pages; current_page++) {
-            const response = await axios.get(`${base_url}/movie/${endpoint}?api_key=${api_key}&language=${language}&page=${current_page}`)
-            movies = [...movies, ...response.data.results]
-        }
-    }
-    else {
+    } else {
         total_pages = 15
-        for (let current_page = 1; current_page <= total_pages; current_page++) {
-            const response = await axios.get(`${base_url}/movie/${endpoint}?api_key=${api_key}&language=${language}&page=${current_page}`)
-            movies = [...movies, ...response.data.results]
-        }
     }
 
-    const key = 'title'
-    const unique_movies = [...new Map(movies.map(item => [item[key], item])).values()]
-    return unique_movies
+    for (let current_page = 1; current_page <= total_pages; current_page++) {
+        const response = await axios.get(`${base_url}/movie/${endpoint}?api_key=${api_key}&language=${language}&page=${current_page}`)
+        movies = [...movies, ...response.data.results]
+    }
+
+    // const key = 'title'
+    // const unique_movies = [...new Map(movies.map(item => [item[key], item])).values()]
+    // return unique_movies
+    return movies
 })
 
 const initialState = {

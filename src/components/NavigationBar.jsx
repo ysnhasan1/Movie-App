@@ -82,6 +82,7 @@ function NavigationBar() {
                                         </NavDropdown>
 
                                         <NavDropdown title={language === "en-US" ? "Sorted By IMDb Ratings" : "IMDb Puanına Göre"}>
+                                            <NavDropdown.Item className='dropdown-item' onClick={() => handleOptionClick('sortedBy', 'default')} style={isClicked.sortedBy === "default" ? activeStyle : {}}>{language === "en-US" ? "Default" : "Varsayılan"}</NavDropdown.Item>
                                             <NavDropdown.Item className='dropdown-item' onClick={() => handleOptionClick('sortedBy', 'descending')} style={isClicked.sortedBy === "descending" ? activeStyle : {}}>{language === "en-US" ? "Descending" : "Azalan"}</NavDropdown.Item>
                                             <NavDropdown.Item className='dropdown-item' onClick={() => handleOptionClick('sortedBy', 'ascending')} style={isClicked.sortedBy === "ascending" ? activeStyle : {}}>{language === "en-US" ? "Ascending" : "Artan"}</NavDropdown.Item>
                                         </NavDropdown>
