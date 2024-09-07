@@ -27,9 +27,9 @@ https://movnite.netlify.app/
   
 #### `Explore Top Rated, Popular, Upcoming and Now Playing Movies!`
 <img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/dd296e8a-6351-4e98-9c10-7457d9029f09"> <br><br>
-<img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/17438f2a-8002-4f4d-9063-fdb6e6dc9dd9"> <br><br>
-<img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/eaa31154-c80f-4125-ab6a-b327aaf351cd"> <br><br>
-<img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/6a78819d-060b-4582-a3fb-52df0e1d4c26"> <br><br>
+<img src="https://github.com/user-attachments/assets/fd63bee3-5428-4b72-a091-c8bd0a5f1157"> <br><br>
+<img src="https://github.com/user-attachments/assets/7bd563be-eb65-4f3b-84ad-f90f88d76adf"> <br><br>
+<img src="https://github.com/user-attachments/assets/ad16def3-afce-49b2-a786-d845f31da004"> <br><br>
 
 #### `Sort the movies by IMDb ratings!`
 <img src="https://github.com/ysnhasan1/Movie-App/assets/102024926/219b08d6-31ba-4de6-b3fb-bc69c004c4ac"> <br><br>
