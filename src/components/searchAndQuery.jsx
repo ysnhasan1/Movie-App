@@ -1,4 +1,5 @@
 import { useSelector } from "react-redux"
+import { useMemo } from "react"
 import { Link } from "react-router-dom"
 
 import Loading from "./Loading"
@@ -12,18 +13,18 @@ import "../styles/Movies.css"
 
 function SearchAndQuery() {
 
-    let searched_movies = useSelector((state) => state.searchAndQueryReducer.movies)
-    searched_movies = searched_movies.filter(movie => movie.poster_path)
+    const searched_movies = useSelector((state) => state.searchAndQueryReducer.movies)
+    const filtered_movies = useMemo(() => searched_movies.filter(movie => movie.poster_path), [searched_movies])
     const loading_searched_movies = useSelector((state) => state.searchAndQueryReducer.loading)
 
     return (
-        <div className="container" style={{ marginTop: searched_movies.length > 0 && "100px" }}>
-            {searched_movies.length == 0 && <ZeroMovie />}
+        <div className="container" style={{ marginTop: filtered_movies.length > 0 && "100px" }}>
+            {filtered_movies.length == 0 && <ZeroMovie />}
             {loading_searched_movies ? <Loading /> :
                 (
                     <div className="movies-container">
                         <div className="row">
-                            {searched_movies.map((movie, index) => (
+                            {filtered_movies.map((movie, index) => (
                                 <div key={index} className="movie col-4 col-md-3 col-xl-2">
                                     <Link to={`movie/${movie.id}-${movie.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={() => window.scrollTo(0, 0)}>
                                         <div className="img">
