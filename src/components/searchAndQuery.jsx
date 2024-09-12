@@ -13,11 +13,8 @@ import "../styles/Movies.css"
 function SearchAndQuery() {
 
     let searched_movies = useSelector((state) => state.searchAndQueryReducer.movies)
-    const sorted_by = useSelector((state) => state.navigationBarReducer.sorted_by)
-
-    const loading_searched_movies = useSelector((state) => state.searchAndQueryReducer.loading)
-
     searched_movies = searched_movies.filter(movie => movie.poster_path)
+    const loading_searched_movies = useSelector((state) => state.searchAndQueryReducer.loading)
 
     return (
         <div className="container" style={{ marginTop: searched_movies.length > 0 && "100px" }}>
