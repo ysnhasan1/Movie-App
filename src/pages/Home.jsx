@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux"
 
 import Movies from "../components/Movies"
-import SearchAndQuery from "../components/searchAndQuery"
+import SearchAndQuery from "../components/SearchAndQuery"
 import Footer from "../components/Footer"
 
 function Home() {
