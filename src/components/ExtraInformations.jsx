@@ -1,16 +1,16 @@
 import { useSelector } from "react-redux"
+import { useMemo } from "react"
 
 function ExtraInformations() {
 
     const movies = useSelector((state) => state.moviesReducer.movies)
     const language = useSelector((state) => state.navigationBarReducer.language)
 
-    let total_rating = 0
-    movies.forEach(movie => {
-        total_rating += movie.vote_average
-    })
-
-    const average_rating = movies.length > 0 ? (total_rating / movies.length) : 0
+    const average_rating = useMemo(() => {
+        let total_rating = 0
+        movies?.forEach(movie => total_rating += movie?.vote_average)
+        return movies?.length > 0 ? (total_rating / movies?.length) : 0
+    }, [movies])
 
     return (
         <div className="d-flex gap-3 align-items-center my-3" style={{ color: "#d1d1d1" }}>
