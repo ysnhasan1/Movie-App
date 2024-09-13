@@ -31,11 +31,10 @@ function FeaturedCast(props) {
                     {(!loading_credits && !loading_movie) &&
                         <div className="container">
                             {<div className="featured-cast-container">
-                                {language === "en-US" ?
-                                    <h3>Featured Cast <span style={{ color: "#ffffff99" }}>({cast.length})</span></h3>
-                                    :
-                                    <h3>Öne Çıkan Oyuncular <span style={{ color: "#ffffff99" }}>({cast.length})</span></h3>
-                                }
+                                <h3>
+                                    {language === "en-US" ? "Featured Cast" : "Öne Çıkan Oyuncular"}
+                                    <span style={{ color: "#ffffff99" }}> ({cast.length})</span>
+                                </h3>
                                 <Slider {...settings}>
                                     {cast.map((cast, index) => (
                                         <div className="cast" key={index}>
