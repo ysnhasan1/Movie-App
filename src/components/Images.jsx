@@ -42,6 +42,7 @@ function Images(props) {
                                                 src={`https://image.tmdb.org/t/p/original/${path}`}
                                                 alt={`Slide ${index + 1}`}
                                                 placeholderSrc={posterPlaceholder}
+                                                placeholder={<span style={{ width: '300px', height: '200px', display: 'block' }}></span>}
                                                 effect="blur"
                                                 width="100%"
                                                 height="auto"
