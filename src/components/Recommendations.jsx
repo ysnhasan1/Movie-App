@@ -40,7 +40,7 @@ function Recommendations(props) {
                             <h3>{language === "en-US" ? "Recommendations" : "Tavsiyeler"}</h3>
                             <div className="row">
                                 {recommendations.map((recommendation, index) => (
-                                    <div key={index} className="col-6 mb-3">
+                                    <div key={index} className="col-6 mb-3 position-relative">
                                         <Link to={`/movie/${recommendation.id}-${recommendation.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={handleClick}>
                                             <LazyLoadImage
                                                 className="img"
@@ -53,6 +53,7 @@ function Recommendations(props) {
                                                 style={{ color: "white", aspectRatio: 3 / 2 }}
                                             />
                                         </Link>
+                                        <div className="position-absolute recommendation-title fw-bold">{recommendation.title}</div>
                                     </div>
                                 ))}
                             </div>

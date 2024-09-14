@@ -13,7 +13,18 @@
 }
 
 .recommendations-container .img:hover {
-    cursor: pointer;
-    filter: blur(2px);
-    transform: scale(1.01);
+    filter: grayscale(100%);
+}
+
+.recommendations-container .recommendation-title {
+    bottom: 0;
+    color: white;
+    background-color: rgb(10, 10, 10);
+    padding: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 75%;
+    opacity: 0.75;
+    font-size: 0.9rem;
 }
