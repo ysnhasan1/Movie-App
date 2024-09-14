@@ -37,8 +37,7 @@ function Recommendations(props) {
                 <>
                     {recommendations.length > 0 ?
                         <div className="recommendations-container">
-                            {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
-
+                            <h3>{language === "en-US" ? "Recommendations" : "Tavsiyeler"}</h3>
                             <div className="row">
                                 {recommendations.map((recommendation, index) => (
                                     <div key={index} className="col-6 mb-3">
@@ -60,13 +59,9 @@ function Recommendations(props) {
                         </div>
                         :
                         <div className="recommendations-container">
-                            {language === "en-US" ? <h3>Recommendations</h3> : <h3>Tavsiyeler</h3>}
+                            <h3>{language === "en-US" ? "Recommendations" : "Tavsiyeler"}</h3>
                             <div className="text-secondary">
-                                {language === "en-US" ?
-                                    <p>There are no recommendations for this movie.</p>
-                                    :
-                                    <p>Bu film için tavsiye yok.</p>
-                                }
+                                <p>{language === "en-US" ? "There are no recommendations for this movie." : "Bu film için tavsiye yok."}</p>
                             </div>
                         </div>
                     }
