@@ -18,9 +18,15 @@ h3.which-movies {
 }
 
 .movies-container>.row>.movie:hover {
-    transform: scale(0.95);
-    filter: blur(1px);
-    transition: 0.3s ease-in-out;
+    transition: 0.5s ease-in-out;
+
+    .img {
+        transform: scale(1.03);
+    }
+
+    .title {
+        color: #DC3545;
+    }
 }
 
 .movies-container>.row>.movie>.imdb-rating {
