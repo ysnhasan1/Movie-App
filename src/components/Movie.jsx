@@ -27,12 +27,20 @@ function Movie(props) {
     }, [dispatch, props.id, language, props.showVideo])
 
     const movie = useSelector((state) => state.movieReducer.movie)
+    const loading_movie = useSelector((state) => state.movieReducer.loading)
+
+    useEffect(() => {
+        if (!loading_movie && movie?.title) {
+            document.title = `${movie.title} | Movnite`
+        }
+        return () => {
+            document.title = "Movnite | Homepage"
+        }
+    }, [loading_movie, movie])
 
     let { crew } = useSelector((state) => state.creditsReducer.credits)
     let director = crew?.find((crew) => crew.department == "Directing" && crew.job == "Director")
     let novel = crew?.find((crew) => crew.department == "Writing" && crew.job == "Novel")
-
-    const loading_movie = useSelector((state) => state.movieReducer.loading)
 
     function formatRuntime(runtime) {
         const hours = Math.floor(runtime / 60)

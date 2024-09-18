@@ -1,6 +1,15 @@
+import { useEffect } from "react"
 import Footer from "../components/Footer"
 
 function NotFound() {
+
+    useEffect(() => {
+        document.title = `404 Error | Movnite`
+        return () => {
+            document.title = "Movnite | Homepage"
+        }
+    }, [])
+
     return (
         <>
             <div className="container">
