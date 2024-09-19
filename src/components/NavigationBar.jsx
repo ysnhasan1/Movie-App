@@ -65,7 +65,7 @@ function NavigationBar() {
     return (
         <Navbar fixed="top" expand="lg" className="bg-dark" data-bs-theme="dark">
             <div className="container">
-                <Navbar.Brand onClick={navbarBrandClick} style={{ cursor: "pointer" }}><img src={logo} alt="logo" style={{ width: "140px" }} /></Navbar.Brand>
+                <Navbar.Brand onClick={navbarBrandClick} style={{ cursor: "pointer" }}><img src={logo} alt="logo" style={{ width: "120px" }} /></Navbar.Brand>
 
                 {currentLocation === "/" && (
                     <>
