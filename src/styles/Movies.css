@@ -15,6 +15,7 @@ h3.which-movies {
 .movies-container>.row>.movie {
     font-size: 1em;
     margin-bottom: 25px;
+    padding: 6px;
 }
 
 .movies-container>.row>.movie:hover {
