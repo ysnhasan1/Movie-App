@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useEffect } from "react"
 import Footer from "../components/Footer"
 
@@ -12,6 +13,9 @@ function NotFound() {
 
     return (
         <>
+            <Helmet>
+                <meta name="description" content="404 Error! We can't find the page you're looking for." />
+            </Helmet>
             <div className="container">
                 <p className="text-secondary mt-5 pt-5">Oops! We can't find the page you're looking for</p>
                 <div className="d-flex flex-column justify-content-center align-items-center" style={{ height: "75vh" }}>

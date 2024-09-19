@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useSelector } from "react-redux"
 
 import Movies from "../components/Movies"
@@ -10,6 +11,9 @@ function Home() {
 
     return (
         <>
+            <Helmet>
+                <meta name="description" content="Discover your favorite movies. The site provides important details such as the story, director, budget, featured cast, images, recommendations and trailers." />
+            </Helmet>
             {input == "" ? <Movies /> : <SearchAndQuery />}
             <Footer />
         </>

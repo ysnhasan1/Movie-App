@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getMovie } from "../redux/features/movie/movieSlice"
@@ -55,6 +56,9 @@ function Movie(props) {
 
     return (
         <>
+            <Helmet>
+                <meta name="description" content={movie?.overview ? movie.overview : `Learn more about ${movie?.title} by visiting our website.`} />
+            </Helmet>
             {(loading_movie || crew == undefined) ? <Loading /> :
                 <>
                     <Style>
