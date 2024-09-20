@@ -12,10 +12,14 @@ h3.which-movies {
     color: white;
 }
 
+.movies-container>.row {
+    padding: 5px;
+}
+
 .movies-container>.row>.movie {
     font-size: 1em;
     margin-bottom: 25px;
-    padding: 6px;
+    padding: 5px;
 }
 
 .movies-container>.row>.movie:hover {
