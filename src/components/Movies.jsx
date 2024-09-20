@@ -106,7 +106,7 @@ function Movies() {
                                                         effect="blur"
                                                         width="100%"
                                                         height="auto"
-                                                        style={{ color: "white", borderRadius: "0.75rem", aspectRatio: 3 / 5 }}
+                                                        style={{ color: "white", borderRadius: "0.5rem", aspectRatio: 3 / 5 }}
                                                     />
                                                 </div>
                                             </Link>
