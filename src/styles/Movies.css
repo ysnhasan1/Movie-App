@@ -1,3 +1,19 @@
+.bg::before {
+    content: "";
+    background-image: url("../assets/images/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    filter: blur(20px);
+}
+
 h3 {
     font-size: 1.5rem;
     color: white;

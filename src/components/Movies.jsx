@@ -53,87 +53,63 @@ function Movies() {
             }
         })
 
-    const random_background_path = movies[(Math.floor(Math.random() * movies.length))]?.backdrop_path
-
     return (
-        <>
-            <Style>
-                {`
-                    .random-bg::before {
-                        content: "";
-                        background-image: url("https://image.tmdb.org/t/p/w250_and_h141_face${random_background_path}");
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        background-attachment: fixed;
-                        background-position: center;
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        bottom: 0;
-                        left: 0;
-                        opacity: 0.25;
-                        filter: blur(20px);
-                `}
-            </Style>
+        <div className="bg position-relative">
+            <div className="container position-relative">
+                {(input.length > 0 && movies.length == 0) && <ZeroMovie />}
+                {loading_movies ? <Loading /> :
+                    <>
+                        {which_movies === "top_rated" && movies.length != 0 ?
+                            (language === "en-US" ? <h3 className="which-movies">Top Rated Movies</h3> : <h3 className="which-movies">En Fazla Oy Alan Filmler</h3>) :
+                            which_movies === "popular" && movies.length != 0 ?
+                                (language === "en-US" ? <h3 className="which-movies">Popular Movies</h3> : <h3 className="which-movies">Popüler Filmler</h3>) :
+                                which_movies === "upcoming" && movies.length != 0 ?
+                                    (language === "en-US" ? <h3 className="which-movies">Upcoming Movies</h3> : <h3 className="which-movies">Gelecek Filmler</h3>) :
+                                    which_movies === "now_playing" && movies.length != 0 &&
+                                    (language === "en-US" ? <h3 className="which-movies">Now Playing Movies</h3> : <h3 className="which-movies">Gösterimdeki Filmler</h3>)
+                        }
 
-            <div className="random-bg position-relative">
-                <div className="container position-relative">
-                    {(input.length > 0 && movies.length == 0) && <ZeroMovie />}
-                    {loading_movies ? <Loading /> :
-                        <>
-                            {which_movies === "top_rated" && movies.length != 0 ?
-                                (language === "en-US" ? <h3 className="which-movies">Top Rated Movies</h3> : <h3 className="which-movies">En Fazla Oy Alan Filmler</h3>) :
-                                which_movies === "popular" && movies.length != 0 ?
-                                    (language === "en-US" ? <h3 className="which-movies">Popular Movies</h3> : <h3 className="which-movies">Popüler Filmler</h3>) :
-                                    which_movies === "upcoming" && movies.length != 0 ?
-                                        (language === "en-US" ? <h3 className="which-movies">Upcoming Movies</h3> : <h3 className="which-movies">Gelecek Filmler</h3>) :
-                                        which_movies === "now_playing" && movies.length != 0 &&
-                                        (language === "en-US" ? <h3 className="which-movies">Now Playing Movies</h3> : <h3 className="which-movies">Gösterimdeki Filmler</h3>)
-                            }
+                        {(input == "" && movies.length > 0) && <ExtraInformations />}
 
-                            {(input == "" && movies.length > 0) && <ExtraInformations />}
+                        <div className="movies-container">
+                            <div className="row">
+                                {movies.map((movie, index) => (
+                                    <div key={index} className="movie col-4 col-md-3 col-xl-2">
+                                        <Link to={`movie/${movie.id}-${movie.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={() => window.scrollTo(0, 0)}>
+                                            <div className="img">
+                                                <LazyLoadImage
+                                                    src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
+                                                    alt={movie.title + " poster image"}
+                                                    placeholderSrc={posterPlaceholder}
+                                                    effect="blur"
+                                                    width="100%"
+                                                    height="auto"
+                                                    style={{ color: "white", borderRadius: "0.5rem", aspectRatio: 3 / 5 }}
+                                                />
+                                            </div>
+                                        </Link>
 
-                            <div className="movies-container">
-                                <div className="row">
-                                    {movies.map((movie, index) => (
-                                        <div key={index} className="movie col-4 col-md-3 col-xl-2">
-                                            <Link to={`movie/${movie.id}-${movie.title?.replaceAll(" ", "-").toLowerCase()}`} onClick={() => window.scrollTo(0, 0)}>
-                                                <div className="img">
-                                                    <LazyLoadImage
-                                                        src={`https://image.tmdb.org/t/p/w220_and_h330_face/${movie.poster_path}`}
-                                                        alt={movie.title + " poster image"}
-                                                        placeholderSrc={posterPlaceholder}
-                                                        effect="blur"
-                                                        width="100%"
-                                                        height="auto"
-                                                        style={{ color: "white", borderRadius: "0.5rem", aspectRatio: 3 / 5 }}
-                                                    />
-                                                </div>
-                                            </Link>
-
-                                            {movie.vote_average === 0
-                                                ?
-                                                <div className="imdb-rating" style={{ color: "#ffffff99" }}>
-                                                    <i className="bi bi-star-fill bs-star-icon"></i>
-                                                    <span>NR</span>
-                                                </div>
-                                                :
-                                                <div className="imdb-rating">
-                                                    <i className="bi bi-star-fill bs-star-icon"></i>
-                                                    <span>{(movie.vote_average?.toFixed(1))}</span>
-                                                </div>
-                                            }
-                                            <div className="title">{movie.title}</div>
-                                        </div>
-                                    ))}
-                                </div>
+                                        {movie.vote_average === 0
+                                            ?
+                                            <div className="imdb-rating" style={{ color: "#ffffff99" }}>
+                                                <i className="bi bi-star-fill bs-star-icon"></i>
+                                                <span>NR</span>
+                                            </div>
+                                            :
+                                            <div className="imdb-rating">
+                                                <i className="bi bi-star-fill bs-star-icon"></i>
+                                                <span>{(movie.vote_average?.toFixed(1))}</span>
+                                            </div>
+                                        }
+                                        <div className="title">{movie.title}</div>
+                                    </div>
+                                ))}
                             </div>
-                        </>
-                    }
-                </div>
+                        </div>
+                    </>
+                }
             </div>
-        </>
-
+        </div>
     )
 }
 
