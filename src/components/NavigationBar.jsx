@@ -104,7 +104,7 @@ function NavigationBar() {
                                     value={input}
                                     spellCheck="false"
                                 />
-                                <Button className="btn btn-danger text-white" type="submit" onClick={() => dispatch(getSearchAndQuery(input))}>Search</Button>
+                                <Button className="btn btn-danger text-white" type="submit" onClick={() => dispatch(getSearchAndQuery(input))}>{language === "en-US" ? "Search" : "Ara"}</Button>
                             </Form>
                         </Navbar.Collapse>
                     </>
