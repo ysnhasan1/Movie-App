@@ -65,7 +65,7 @@ function Movie(props) {
                         {`
                         .movie-container::before {
                             content: "";
-                            background-image: url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}");
+                            background-image: url("https://image.tmdb.org/t/p/w1920_and_h800_multi_faces/${movie.backdrop_path}");
                             background-size: cover;
                             background-repeat: no-repeat;
                             position: absolute;
@@ -73,7 +73,7 @@ function Movie(props) {
                             right: 0;
                             bottom: 0;
                             left: 0;
-                            opacity: 0.35;
+                            opacity: 0.28;
                             filter: blur(3px);
                     `}
                     </Style>
