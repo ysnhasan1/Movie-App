@@ -55,3 +55,9 @@
         font-size: 0.7rem;
     }
 }
+
+.featured-cast-container>.slick-slider>.slick-list {
+    overflow-x: auto;
+    scrollbar-color: #ffffff99 black;
+    scrollbar-width: thin;
+}
