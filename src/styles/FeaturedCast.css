@@ -60,5 +60,8 @@
     overflow-x: auto;
     scrollbar-color: #ffffff99 black;
     scrollbar-width: thin;
-    flex: 1;
+}
+
+.slick-slide.slick-cloned {
+    display: none;
 }
