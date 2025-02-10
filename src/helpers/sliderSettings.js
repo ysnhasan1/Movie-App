@@ -11,25 +11,33 @@ export const settings = {
         {
             breakpoint: 1200,
             settings: {
-                slidesToShow: 7
+                slidesToShow: 7,
+                infinite: false,
+                centerMode: false,
             }
         },
         {
             breakpoint: 1024,
             settings: {
-                slidesToShow: 5
+                slidesToShow: 5,
+                infinite: false,
+                centerMode: false,
             }
         },
         {
             breakpoint: 768,
             settings: {
-                slidesToShow: 4
+                slidesToShow: 4,
+                infinite: false,
+                centerMode: false,
             }
         },
         {
             breakpoint: 600,
             settings: {
-                slidesToShow: 3
+                slidesToShow: 3,
+                infinite: false,
+                centerMode: false,
             }
         }
     ]
