@@ -5,6 +5,7 @@ export const settings = {
     autoplay: false,
     arrows: false,
     slidesToShow: 9,
+    slidesToScroll: 1,
     initialSlide: 0,
     responsive: [
         {
